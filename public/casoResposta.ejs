@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/casoResposta.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Resposta Caso</title>
+  </head>
+  <body>
+    <%- include('header') %>
+    <div class="main-container">
+      <div class="grid-container">
+        <div class="case-card">
+          <div class="case-info">
+            <div class="image-container">
+              <img src="/assets/adolescente.png" alt="Ícone Adolescente" />
+            </div>
+            <div class="case-description">
+              <p>
+                Adolescente Com Dificuldade Respiratória E Tosse Persistente
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="action-buttons">
+        <button id="showTips" class="action-button">Dicas</button>
+        <button id="showResponse" class="action-button">Respostas</button>
+      </div>
+
+      <div id="tipsSection" style="display: none">
+        <div class="grid-container">
+          <div class="case-card" id="tip-1">
+            <div class="case-info">
+              <div class="case-description2">
+                <div class="dica">
+                  <button>Dica 1</button>
+                </div>
+                <p>
+                  Paciente masculino de 16 anos apresenta dificuldade
+                  respiratória e tosse persistente há 2 semanas. A tosse é pior
+                  à noite e associada a episódios de sibilância.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="case-card hidden" id="tip-2" style="display: none">
+            <div class="case-info">
+              <div class="case-description2">
+                <div class="dica">
+                  <button>Dica 2</button>
+                </div>
+                <p>
+                  Tosse não produtiva, mãe relata que sintomas começaram após
+                  reforma do quarto do paciente. Exposição a possíveis
+                  irritantes ambientais deve ser considerada.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="case-card hidden" id="tip-3" style="display: none">
+            <div class="case-info">
+              <div class="case-description2">
+                <div class="dica">
+                  <button>Dica 3</button>
+                </div>
+                <p>
+                  HMP: Nenhuma condição crônica conhecida. História familiar:
+                  mãe com asma. CHV: Presença de gato em casa e recente pintura
+                  do quarto.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="case-card hidden" id="tip-4" style="display: none">
+            <div class="case-info">
+              <div class="case-description2">
+                <div class="dica">
+                  <button>Dica 4</button>
+                </div>
+                <p>
+                  REG, alerta e orientado, afebril, mucosas coradas e
+                  hidratadas, acianótico, anictérico. Dados vitais: PA: 120/80
+                  mmHg, FR: 24, FC: 88, SpO2: 96% em ar ambiente, temperatura:
+                  36,7°C Ausculta pulmonar: sibilos bilaterais expiratórios sem
+                  ruídos adventícios. Ausculta cardíaca: BCRNF 2T sem sopros.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="case-card hidden" id="tip-5" style="display: none">
+            <div class="case-info">
+              <div class="case-description2">
+                <div class="dica">
+                  <button>Dica 5</button>
+                </div>
+                <p>
+                  O exame de tórax revela sinais de inflamação das vias aéreas,
+                  sem evidências de pneumonia ou outras patologias graves.
+                </p>
+                <img src="/assets/bronquite.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+          <div class="case-card hidden" id="tip-6" style="display: none">
+            <div class="case-info">
+              <div class="case-description2">
+                <div class="dica">
+                  <button>Dica 6</button>
+                </div>
+                <p>
+                  O paciente tem evitado contato com o gato e outras substâncias
+                  irritantes em casa, relatando uma leve melhora nos sintomas
+                  após algumas semanas. Apesar disso, ele ainda experimenta
+                  episódios de falta de ar e chiado no peito durante atividades
+                  físicas moderadas.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="button-container">
+          <button
+            class="next-button"
+            id="nextTipButton"
+            onclick="showNextTip()"
+          >
+            Próxima Dica (1/6) <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div id="responseSection" style="display: none">
+        <div class="question-container">
+
+          <div class="diagnosis-container">
+            <label for="diagnosis-input"
+              ><i class="fa-solid fa-stethoscope"></i> Diagnóstico:</label
+            >
+            <div class="input-container">
+              <input
+                type="text"
+                id="diagnosis-input"
+                class="answer-input"
+                placeholder="Diagnóstico"
+              />
+              <button
+                class="add-button"
+                onclick="addResponse('diagnosis-input', 'diagnosis-list')"
+              >
+                +
+              </button>
+            </div>
+            <ul class="response-list" id="diagnosis-list"></ul>
+          </div>
+
+          <div class="prescription-container">
+            <label for="prescription-input"
+              ><i class="fa-solid fa-pills"></i> Prescrição:</label
+            >
+            <div class="input-container">
+              <input
+                type="text"
+                id="prescription-input"
+                class="answer-input"
+                placeholder="Prescrição"
+              />
+              <button
+                class="add-button"
+                onclick="addResponse('prescription-input', 'prescription-list')"
+              >
+                +
+              </button>
+            </div>
+            <ul class="response-list" id="prescription-list"></ul>
+          </div>
+
+          <div class="exam-container">
+            <label for="exam-input"
+              ><i class="fa fa-clipboard"></i> Exame:</label
+            >
+            <div class="input-container">
+              <input
+                type="text"
+                id="exam-input"
+                class="answer-input"
+                placeholder="Exame"
+              />
+              <button
+                class="add-button"
+                onclick="addResponse('exam-input', 'exam-list')"
+              >
+                +
+              </button>
+            </div>
+            <ul class="response-list" id="exam-list"></ul>
+          </div>
+
+          <!-- Buttons to send response and show next tip -->
+          <div class="button-container">
+            <button
+              class="next-button"
+              onclick="location.href='/respostaAluno';"
+            >
+              Enviar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/scripts/funcoes.js"></script>
+  </body>
+</html>

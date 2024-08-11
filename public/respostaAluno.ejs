@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/respostaAluno.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Resposta Aluno</title>
+  </head>
+  <body>
+    <%- include('header') %>
+    <div class="main-container">
+      <div class="grid-container">
+        <div class="case-card">
+          <div class="case-info">
+            <div class="image-container">
+              <img src="/assets/adolescente.png" alt="Ícone Adolescente" />
+            </div>
+            <div class="case-description">
+              <p>
+                Adolescente Com Dificuldade Respiratória E Tosse Persistente
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="case-actions">
+      <button class="btnExame selected" id="btnDiagnostico">
+        <i class="fa-solid fa-stethoscope"></i>Diagnóstico
+      </button>
+      <button class="btnExame" id="btnPrescricao">
+        <i class="fa-solid fa-pills"></i>Prescrição
+      </button>
+      <button class="btnExame" id="btnExame">
+        <i class="fa fa-clipboard"></i>Exame
+      </button>
+    </div>
+    <div class="case-actions">
+      <button class="btnExame" id="btnVideo">
+        <i class="fa fa-play"></i>Video Explicação
+      </button>
+    </div>
+    <div id="videoSection" style="display: none">
+      <div class="video-container">
+        <iframe
+          id="videoIframe"
+          width="100%"
+          height="315"
+          src="https://www.youtube.com/embed/dAEgPe5hS6E?enablejsapi=1"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Diagnóstico Section -->
+    <div class="diagnostico-section main-container">
+      <div class="grid-container">
+        <div class="case-card" id="case-card-resposta">
+          <div class="case-info">
+            <div class="case-description">
+              <p>Bronquite Asmática</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="case-card" id="case-card-alternativas">
+          <div class="case-info">
+            <div id="btnDiagnosticoAlternatives" class="case-description">
+              <p>Alternativas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="grid-container" id="suas-repostas">
+          <p>Suas Respostas</p>
+          <div class="case-card" id="case-card-certa">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Asma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Bronquiolite Viral Aguda</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Traqueobronquite</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-description">
+              <p>Pneumonia</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup-diagnostico" class="popup-overlay" style="display: none">
+      <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <h3>Alternativas para Diagnóstico</h3>
+        <button class="alternative-button">Asma Brônquica</button>
+        <button class="alternative-button">Asma Alérgica</button>
+        <button class="alternative-button">Asma de Esforço</button>
+      </div>
+    </div>
+
+    <!-- Prescrição Section -->
+    <div class="prescricao-section main-container" style="display: none">
+      <div class="grid-container">
+        <div class="case-card" id="case-card-resposta">
+          <div class="case-info">
+            <div class="case-description">
+              <p>Beclometasona</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="case-card" id="case-card-alternativas">
+          <div class="case-info">
+            <div class="case-description" id="btnPrescricaoAlternatives">
+              <p>Alternativas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="grid-container" id="suas-repostas">
+          <p>Suas Respostas</p>
+          <div class="case-card" id="case-card-certa">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Budesonida</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Amoxicilina</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-description">
+              <p>Ibuprofeno</p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Acetaminofeno</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup-prescricao" class="popup-overlay" style="display: none">
+      <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <h3>Alternativas para Prescrição</h3>
+        <button class="alternative-button">
+          Inaladores de Corticosteroide
+        </button>
+        <button class="alternative-button">
+          Beta-agonistas de Longa Duração
+        </button>
+        <button class="alternative-button">
+          Antagonistas dos Receptores de Leucotrienos
+        </button>
+      </div>
+    </div>
+
+    <!-- Exame Section -->
+    <div class="exame-section main-container" style="display: none">
+      <div class="grid-container">
+        <div class="case-card" id="case-card-resposta">
+          <div class="case-info">
+            <div class="case-description">
+              <p>Espirometria</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="case-card" id="case-card-alternativas">
+          <div class="case-info">
+            <div class="case-description" id="btnExameAlternatives">
+              <p>Alternativas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="main-container">
+        <div class="grid-container" id="suas-repostas">
+          <p>Suas Respostas</p>
+          <div class="case-card" id="case-card-certa">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Espirometria</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Raio-X do Abdômen</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Eletroencefalograma (EEG)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="grid-container">
+          <div class="case-card" id="case-card-errada">
+            <div class="case-info">
+              <div class="case-description">
+                <p>Ecocardiograma</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="popup-exame" class="popup-overlay" style="display: none">
+      <div class="popup-content">
+        <span class="close-button">&times;</span>
+        <h3>Alternativas para Exame</h3>
+        <button class="alternative-button">
+          Espirometria com Prova de Broncodilatação
+        </button>
+        <button class="alternative-button">
+          Teste de Pico de Fluxo Expiratório
+        </button>
+        <button class="alternative-button">
+          Teste de Provocação Bronquial
+        </button>
+      </div>
+    </div>
+
+    <script src="/scripts/respostaAluno.js"></script>
+  </body>
+</html>

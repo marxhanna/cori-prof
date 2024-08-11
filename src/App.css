@@ -1,0 +1,414 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+body {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+  background-color: black;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+/* SIDEBAR */
+
+.teacherName {
+  margin-top: -3%;
+  line-height: 15px;
+  margin-bottom: 10%;
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 30px;
+}
+
+.teacherEmail {
+  line-height: 15px;
+  margin-bottom: 20%;
+  color: #979797;
+}
+
+.sideButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sideButtons a {
+  color: white;
+}
+
+.button {
+  width: 15vw;
+  padding: 2%;
+  line-height: 40px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 5%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.button img {
+  height: 30px;
+  width: 30px;
+  margin: 5% 10%;
+}
+
+.button:hover {
+  cursor: pointer;
+  background-color: #7F7BFF;
+}
+
+.active {
+  background-color: #7F7BFF;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.pageContent {
+  border-radius: 30px;
+  margin-top: 2%;
+  background-color: #f2f2fe;
+  height: 90vh;
+  width: 75vw;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none; 
+}
+
+.pageContent::-webkit-scrollbar {
+  display: none; /* para Chrome, Safari e Opera */
+}
+
+/* DASHBOARD */
+
+/* DASHBOARD HEADER */
+
+.dashboardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2% 6% 0 4%;
+}
+
+.dashboardH1 {
+  color: #262A41;
+  font-size: 40px;
+  margin: 2% 0 0 4%;
+}
+
+.dashboardHeader button {
+  background-color: #FF0F68;
+  color: white;
+  font-weight: 400;
+  border: none;
+  padding: 0 5% 0 5%;
+  height: 40px;
+  border-radius: 15px;
+  font-size: 16px;
+  margin: 2% 4% 0 0;
+  flex-shrink: 0;
+}
+
+.dashboardFilters {
+  margin-top: -0.5%;
+  display: flex;
+  align-items: center;
+  flex-shrink:0;
+}
+
+.filter {
+  display: flex;
+  align-items: center;
+  margin-left: 3.8%;
+  color: #888888;
+  flex-shrink:0;
+  width: 50%;
+}
+
+.filter img {
+  margin-right: 5%;
+}
+
+.filter p {
+  margin-left: 5%;
+  width: 100%
+}
+
+/* DASHBOARD STATISTIC COMPONENT */
+
+.statistics {
+  margin-left: 3.8%;
+}
+
+.statisticTags {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tag {
+  background-color: #6B4CF2;
+  border-radius: 15px;
+  color: white;
+  font-family: 'Outfit';
+  font-weight: 400;
+  width: 25%;
+  margin-left: 5%;
+  text-align: center;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+}
+
+.statisticNumber {
+  font-family: 'Outfit';
+  font-size: 52px;
+  font-weight: 700;
+}
+
+/* CLASSES */
+
+.classButtons {
+  display: flex;
+}
+
+.purpleBtn {
+  background-color: #7F7BFF !important;
+}
+
+.classCard {
+  display: flex;
+  padding-left: 3%;
+}
+
+.classPhoto {
+  height: 55px;
+  width: 55px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.classPhoto img {
+  height: 45px;
+  width: 45px;
+}
+
+.class {
+  margin-left: 3.8%;
+  margin-top: 3%;
+}
+
+.hoverClass:hover {
+  background-color: #A6DC00;
+  color: white;
+  cursor: pointer;
+  .classPhoto {
+    background-color: white;
+  }
+}
+
+.className {
+  display: flex;
+  align-items: center;
+  margin: 1% 0 3.8% 3.8%;
+}
+
+.classTitle {
+  font-family: 'Outfit';
+  font-weight: 500;
+  font-size: 20px;
+  padding: 0.5%;
+  color: white;
+  background-color: #7F7BFF;
+  flex-shrink: 0;
+  border-radius: 0 15px 15px 0;
+}
+
+.pinDiv {
+  padding: 1%;
+  background-color: #FF0F68;
+  border-radius: 15px;
+  color: white;
+  font-weight: 600;
+  font-size: 25px;
+}
+
+.formName {
+  margin-left: 4.2%;
+}
+
+.campos {
+  display: flex;
+  margin-left: 4.2%;
+}
+
+.turmaExportadora {
+  margin-left: 5%;
+}
+
+.createClass {
+  margin-left: 4.2%;
+  padding: 1% 2% 1% 2%;
+  border: none;
+  border-radius: 15px;
+  background-color: #7F7BFF;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.btnPink {
+  margin-left: 4.2%;
+  padding: 1% 2% 1% 2%;
+  border: none;
+  border-radius: 50px;
+  background-color: #FF0F68;
+  color: white;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.turmas {
+  display: flex;
+  margin-bottom: 5%;
+}
+
+.schoolName {
+  font-weight: 600;
+  font-size: 20px;
+  color: #FF0F68;
+  margin-left: 4.2%;
+}
+
+:where(.css-dev-only-do-not-override-1okl62o).ant-card-small >.ant-card-body {
+  padding: 12px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+}
+
+.login {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+}
+
+input[type="text"], input[type="password"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+}
+
+.loginForm button {
+  width: 100%;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 15px;
+  background-color: #7F7BFF;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.loginForm button:hover {
+  cursor: pointer;
+  background-color: #8985ff;
+}
+
+.borderless .ant-select-selector {
+  border: none !important;
+  outline: none !important;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.custom-checkbox label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  color: grey;
+}
+
+.custom-checkbox label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  border: 1px solid #CCCCCC;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+  background-color: white;
+  border-color: #CCCCCC;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-65%) translateX(10%) rotate(45deg);
+  width: 5px;
+  height: 10px;
+  border-bottom: 2px solid #7A5CFA;
+  border-right: 2px solid #7A5CFA;
+}
+
+.radioPuzzle {
+  border: 2px dashed #7F7BFF;
+  border-radius: 15px;
+  padding: 5%;
+}
+
+:where(.css-dev-only-do-not-override-1okl62o).ant-upload-wrapper .ant-upload-list.ant-upload-list-picture .ant-upload-list-item, :where(.css-dev-only-do-not-override-1okl62o).ant-upload-wrapper .ant-upload-list.ant-upload-list-picture-card .ant-upload-list-item, :where(.css-dev-only-do-not-override-1okl62o).ant-upload-wrapper .ant-upload-list.ant-upload-list-picture-circle .ant-upload-list-item {
+    position: relative;
+    height: 66px;
+    padding: 8px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    width: 500px;
+}
+
+@media screen and (max-width: 600px) {
+  .imagem-mobile {
+    display: none;
+  }
+  .loginForm {
+    margin-left: 0;
+    width: 90%;
+  }
+  .login {
+    display: flex;
+    align-items: center;
+    width: 100vw;
+  }
+  .ant-form-item-label {
+    display: none;
+  }
+}
